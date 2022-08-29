@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.23)
+project(C_Programming_For_Beginners___Master_the_C_Language C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(C_Programming_For_Beginners___Master_the_C_Language main.c)
