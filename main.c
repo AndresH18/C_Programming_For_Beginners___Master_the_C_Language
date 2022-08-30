@@ -1,41 +1,21 @@
 #include <stdio.h>
 
-void duplicarValor(int);
-
-void duplicarReferencia(int *);
-
 int main() {
-    printf("Hello, World!\n");
-    fflush(stdout);
-    int i = 0;
-    scanf_s("%d", &i);
+    // show output to console
+    printf("Hello ");
+    printf("%s%s", "World", "\n");
 
-    printf("Ingrese un numero para duplicar\n");
-    fflush(stdout);
-    i = 0;
-    scanf_s("%d", &i);
+    /* Read input form console
+     * The first parameter is how to convert the input
+     * The following parameters are the variables(addresses) where to store the value read.
+     * Important to remember:
+     *      Returns the number of items it reads
+     *      If you are reading a primitive value, the store variable must be preceded by &
+     *      If you are reading a string, don't use &
+     */
+    int number = 0;
+    scanf_s("%d %s", &number);
+    printf("\n%d", number);
 
-    printf("Ingresaste %10d esta en %p", i, &i);
     return 0;
 }
-
-void duplicarValor(int n) {
-    printf("---Duplicar por Valor---\n");
-    printf("%-10s %d\n", "n", n);
-    printf("%-10s %p\n", "&n", &n);
-    n = n * 2;
-    printf("%-10s %d\n", "n", n);
-    printf("%-10s %p\n", "&n", &n);
-    printf("---\n");
-}
-
-void duplicarReferencia(int *n) {
-    printf("---Duplicar por Referencia---\n");
-    printf("%-10s %d\n", "n", *n);
-    printf("%-10s %p\n", "&n", n);
-    *n = (*n) * 2;
-    printf("%-10s %d\n", "n", *n);
-    printf("%-10s %p\n", "&n", n);
-    printf("---\n");
-}
-
